@@ -112,6 +112,7 @@
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                                 <RowDefinition Height="15"/>
                             </Grid.RowDefinitions>
 
@@ -155,6 +156,13 @@
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding ShareThisAppCommand}" />
+
+                            <button:SfButton Grid.Column="1" Grid.Row="6"
+                                             Text="{x:Static resources:AppResources.RateThisApp}"
+                                             ImageSource="{AppThemeBinding Dark=star_rate_dark_theme.svg, Light=star_rat_light_theme.svg}"
+                                             ShowIcon="True"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding RateThisAppCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
 

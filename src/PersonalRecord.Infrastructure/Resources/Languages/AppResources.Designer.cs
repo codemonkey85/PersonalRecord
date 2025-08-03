@@ -268,6 +268,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rate this app.
+        /// </summary>
+        public static string RateThisApp {
+            get {
+                return ResourceManager.GetString("RateThisApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report a problem.
         /// </summary>
         public static string ReportAProblem {
