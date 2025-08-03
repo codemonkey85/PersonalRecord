@@ -119,5 +119,13 @@
 
             PopupIsOpen = true;
         }
+
+        [RelayCommand]
+        public async Task RateThisAppAsync()
+        {
+            var playStoreUrl = $"{EnvironmentConstants.PLAY_STORE_URL}";
+            var uri = new Uri(playStoreUrl);
+            await _navigationService.OpenSystemBrowserAsync(uri);
+        }
     }
 }

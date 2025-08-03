@@ -222,4 +222,7 @@
   <data name="PersonalRecordMaxes" xml:space="preserve">
     <value>PR Höchstwerte</value>
   </data>
+  <data name="RateThisApp" xml:space="preserve">
+    <value>Bewerte diese App</value>
+  </data>
 </root>
