@@ -48,7 +48,7 @@ With this app you can track all your personal records and have a good overview o
 
 # Usage
 ## Overview
-![Overview](./.github/images/feature_graphic.png)
+![Overview](./.github/images/overview_graphic.png)
 
 ## General information
 ### OS
