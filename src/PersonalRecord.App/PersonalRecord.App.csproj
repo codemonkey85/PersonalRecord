@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<RootNamespace>PersonalRecord.App</RootNamespace>
 		<ApplicationTitle>PersonalRecord.App</ApplicationTitle>
-		<ApplicationId>com.companyname.personalrecord.app</ApplicationId>
+		<ApplicationId>com.ramo.personalrecord</ApplicationId>
 		<OutputType Condition="'$(TargetFramework)' != 'net8.0'">Exe</OutputType>
 	</PropertyGroup>
   
