@@ -1,3 +1,4 @@
 ﻿- Updated used Libraries
 - Set target Android version to 15 (Google Play requirement)
 - Add app rating button
+- Fixed a bug where left swipe closes the app
