@@ -1,6 +1,7 @@
 ﻿namespace PersonalRecord.App
 {
     using CommunityToolkit.Mvvm.Messaging;
+    using Microsoft.Maui;
     using PersonalRecord.Domain.Models;
     using PersonalRecord.Services.Events;
     using PersonalRecord.Services.Interfaces;
@@ -37,16 +38,19 @@
             {
                 RestartAppWithAction(SetTheme);
             };
+        }
 
-            MainPage = new AppShell();
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new AppShell());
         }
 
         private void RestartAppWithAction(Callback callback)
         {
-            (App.Current as App)!.MainPage!.Dispatcher.Dispatch(() =>
+            Application.Current!.Windows[0]!.Page!.Dispatcher.Dispatch(() =>
             {
                 callback();
-                (App.Current as App)!.MainPage = new AppShell();
+                Application.Current.Windows[0].Page = new AppShell();
             });
         }
 
