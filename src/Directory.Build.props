@@ -16,7 +16,7 @@
   
   <PropertyGroup>
     <SyncfusionVersion>30.1.40</SyncfusionVersion>
-    <MauiVersion>8.0.100</MauiVersion>
+    <MauiVersion>9.0.110</MauiVersion>
 
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
