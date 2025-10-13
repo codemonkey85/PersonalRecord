@@ -47,7 +47,7 @@
 
         private void RestartAppWithAction(Callback callback)
         {
-            Application.Current!.Windows[0]!.Page!.Dispatcher.Dispatch(() =>
+            Application.Current!.Windows[0].Dispatcher.Dispatch(() =>
             {
                 callback();
                 Application.Current.Windows[0].Page = new AppShell();
