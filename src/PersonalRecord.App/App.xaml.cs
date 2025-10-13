@@ -1,7 +1,6 @@
 ﻿namespace PersonalRecord.App
 {
     using CommunityToolkit.Mvvm.Messaging;
-    using Microsoft.Maui;
     using PersonalRecord.Domain.Models;
     using PersonalRecord.Services.Events;
     using PersonalRecord.Services.Interfaces;
@@ -11,7 +10,7 @@
     public partial class App : Application
     {
         private readonly ISettingsService _settingsService;
-        
+
         private delegate void Callback();
 
         public App(PreparationDatabase preparationDatabase, ISettingsService settingsService)
@@ -47,10 +46,10 @@
 
         private void RestartAppWithAction(Callback callback)
         {
-            Application.Current!.Windows[0].Dispatcher.Dispatch(() =>
+            Current!.Windows[0].Dispatcher.Dispatch(() =>
             {
                 callback();
-                Application.Current.Windows[0].Page = new AppShell();
+                Current.Windows[0].Page = new AppShell();
             });
         }
 
