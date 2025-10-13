@@ -10,7 +10,7 @@
     public partial class App : Application
     {
         private readonly ISettingsService _settingsService;
-        
+
         private delegate void Callback();
 
         public App(PreparationDatabase preparationDatabase, ISettingsService settingsService)
@@ -37,16 +37,19 @@
             {
                 RestartAppWithAction(SetTheme);
             };
+        }
 
-            MainPage = new AppShell();
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new AppShell());
         }
 
         private void RestartAppWithAction(Callback callback)
         {
-            (App.Current as App)!.MainPage!.Dispatcher.Dispatch(() =>
+            Current!.Windows[0].Dispatcher.Dispatch(() =>
             {
                 callback();
-                (App.Current as App)!.MainPage = new AppShell();
+                Current.Windows[0].Page = new AppShell();
             });
         }
 
