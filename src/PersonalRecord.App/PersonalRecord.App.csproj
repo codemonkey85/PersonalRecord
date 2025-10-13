@@ -1,188 +1,170 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<RootNamespace>PersonalRecord.App</RootNamespace>
-		<ApplicationTitle>PersonalRecord.App</ApplicationTitle>
-		<ApplicationId>com.ramo.personalrecord</ApplicationId>
-		<OutputType Condition="'$(TargetFramework)' != 'net8.0'">Exe</OutputType>
-	</PropertyGroup>
-  
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net8.0-android;net8.0-ios</TargetFrameworks>
+    <RootNamespace>PersonalRecord.App</RootNamespace>
+    <ApplicationTitle>PersonalRecord.App</ApplicationTitle>
+    <ApplicationId>com.ramo.personalrecord</ApplicationId>
+    <OutputType Condition="'$(TargetFramework)' != 'net9.0'">Exe</OutputType>
   </PropertyGroup>
-
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\personalrecord_icon.png" />
-
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#00E1FB" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-
-		<!-- Custom Fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
-
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <AndroidResource Remove="Resources\AppIcon\mipmap-hdpi\**" />
-	  <AndroidResource Remove="Resources\AppIcon\mipmap-ldpi\**" />
-	  <AndroidResource Remove="Resources\AppIcon\mipmap-mdpi\**" />
-	  <AndroidResource Remove="Resources\AppIcon\mipmap-xhdpi\**" />
-	  <AndroidResource Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
-	  <AndroidResource Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
-	  <Compile Remove="Resources\AppIcon\mipmap-hdpi\**" />
-	  <Compile Remove="Resources\AppIcon\mipmap-ldpi\**" />
-	  <Compile Remove="Resources\AppIcon\mipmap-mdpi\**" />
-	  <Compile Remove="Resources\AppIcon\mipmap-xhdpi\**" />
-	  <Compile Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
-	  <Compile Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
-	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-hdpi\**" />
-	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-ldpi\**" />
-	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-mdpi\**" />
-	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-xhdpi\**" />
-	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
-	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
-	  <MauiCss Remove="Resources\AppIcon\mipmap-hdpi\**" />
-	  <MauiCss Remove="Resources\AppIcon\mipmap-ldpi\**" />
-	  <MauiCss Remove="Resources\AppIcon\mipmap-mdpi\**" />
-	  <MauiCss Remove="Resources\AppIcon\mipmap-xhdpi\**" />
-	  <MauiCss Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
-	  <MauiCss Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
-	  <MauiXaml Remove="Resources\AppIcon\mipmap-hdpi\**" />
-	  <MauiXaml Remove="Resources\AppIcon\mipmap-ldpi\**" />
-	  <MauiXaml Remove="Resources\AppIcon\mipmap-mdpi\**" />
-	  <MauiXaml Remove="Resources\AppIcon\mipmap-xhdpi\**" />
-	  <MauiXaml Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
-	  <MauiXaml Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
-	  <None Remove="Resources\AppIcon\mipmap-hdpi\**" />
-	  <None Remove="Resources\AppIcon\mipmap-ldpi\**" />
-	  <None Remove="Resources\AppIcon\mipmap-mdpi\**" />
-	  <None Remove="Resources\AppIcon\mipmap-xhdpi\**" />
-	  <None Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
-	  <None Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher.xml" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_foreground.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_round.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-ldpi\ic_launcher.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_foreground.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_round.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
-	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Resources\AppIcon\ic_launcher-web.png" />
-	  <None Remove="Resources\AppIcon\personalrecord_icon.png" />
-	  <None Remove="Resources\Images\delete_dark_theme.svg" />
-	  <None Remove="Resources\Images\delete_light_theme.svg" />
-	  <None Remove="Resources\Images\download_dark_theme.svg" />
-	  <None Remove="Resources\Images\download_light_theme.svg" />
-	  <None Remove="Resources\Images\personalrecord.png" />
-	  <None Remove="Resources\Images\save_dark_theme.svg" />
-	  <None Remove="Resources\Images\save_light_theme.svg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher.xml" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_foreground.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_round.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-ldpi\ic_launcher.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_foreground.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_round.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
-	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiAsset Include="SyncfusionLicense.txt">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </MauiAsset>
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="epj.RouteGenerator" Version="1.0.5" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.18" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.18" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.18" />
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.18" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
-		<PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
-		<PackageReference Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
-		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
-		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
-		<PackageReference Include="Syncfusion.Maui.Popup" Version="$(SyncfusionVersion)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\PersonalRecord.Domain\PersonalRecord.Domain.csproj" />
-	  <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
-	  <ProjectReference Include="..\PersonalRecord.Services\PersonalRecord.Services.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Views\PersonalRecordDetailView.xaml.cs">
-	    <DependentUpon>PersonalRecordDetailView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\PersonalRecordMaxesView.xaml.cs">
-	    <DependentUpon>PersonalRecordMaxesView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\PersonalRecordAllView.xaml.cs">
-	    <DependentUpon>PersonalRecordAllView.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\MainView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\PersonalRecordAllView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\PersonalRecordDetailView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\PersonalRecordMaxesView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\MovementsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\SettingsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
-
+  <PropertyGroup>
+    <TargetFrameworks>net9.0;net9.0-android;net9.0-ios</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\personalrecord_icon.png" />
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#00E1FB" />
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+    <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Remove="Resources\AppIcon\mipmap-hdpi\**" />
+    <AndroidResource Remove="Resources\AppIcon\mipmap-ldpi\**" />
+    <AndroidResource Remove="Resources\AppIcon\mipmap-mdpi\**" />
+    <AndroidResource Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+    <AndroidResource Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+    <AndroidResource Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+    <Compile Remove="Resources\AppIcon\mipmap-hdpi\**" />
+    <Compile Remove="Resources\AppIcon\mipmap-ldpi\**" />
+    <Compile Remove="Resources\AppIcon\mipmap-mdpi\**" />
+    <Compile Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+    <Compile Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+    <Compile Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+    <EmbeddedResource Remove="Resources\AppIcon\mipmap-hdpi\**" />
+    <EmbeddedResource Remove="Resources\AppIcon\mipmap-ldpi\**" />
+    <EmbeddedResource Remove="Resources\AppIcon\mipmap-mdpi\**" />
+    <EmbeddedResource Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+    <EmbeddedResource Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+    <EmbeddedResource Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+    <MauiCss Remove="Resources\AppIcon\mipmap-hdpi\**" />
+    <MauiCss Remove="Resources\AppIcon\mipmap-ldpi\**" />
+    <MauiCss Remove="Resources\AppIcon\mipmap-mdpi\**" />
+    <MauiCss Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+    <MauiCss Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+    <MauiCss Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+    <MauiXaml Remove="Resources\AppIcon\mipmap-hdpi\**" />
+    <MauiXaml Remove="Resources\AppIcon\mipmap-ldpi\**" />
+    <MauiXaml Remove="Resources\AppIcon\mipmap-mdpi\**" />
+    <MauiXaml Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+    <MauiXaml Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+    <MauiXaml Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+    <None Remove="Resources\AppIcon\mipmap-hdpi\**" />
+    <None Remove="Resources\AppIcon\mipmap-ldpi\**" />
+    <None Remove="Resources\AppIcon\mipmap-mdpi\**" />
+    <None Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+    <None Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+    <None Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-ldpi\ic_launcher.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\AppIcon\ic_launcher-web.png" />
+    <None Remove="Resources\AppIcon\personalrecord_icon.png" />
+    <None Remove="Resources\Images\delete_dark_theme.svg" />
+    <None Remove="Resources\Images\delete_light_theme.svg" />
+    <None Remove="Resources\Images\download_dark_theme.svg" />
+    <None Remove="Resources\Images\download_light_theme.svg" />
+    <None Remove="Resources\Images\personalrecord.png" />
+    <None Remove="Resources\Images\save_dark_theme.svg" />
+    <None Remove="Resources\Images\save_light_theme.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-ldpi\ic_launcher.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+    <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiAsset Include="SyncfusionLicense.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </MauiAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="epj.RouteGenerator" Version="1.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+    <PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
+    <PackageReference Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
+    <PackageReference Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
+    <PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
+    <PackageReference Include="Syncfusion.Maui.Popup" Version="$(SyncfusionVersion)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalRecord.Domain\PersonalRecord.Domain.csproj" />
+    <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
+    <ProjectReference Include="..\PersonalRecord.Services\PersonalRecord.Services.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\PersonalRecordDetailView.xaml.cs">
+      <DependentUpon>PersonalRecordDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PersonalRecordMaxesView.xaml.cs">
+      <DependentUpon>PersonalRecordMaxesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PersonalRecordAllView.xaml.cs">
+      <DependentUpon>PersonalRecordAllView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <MauiXaml Update="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\PersonalRecordAllView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\PersonalRecordDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\PersonalRecordMaxesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\MovementsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+  </ItemGroup>
 </Project>

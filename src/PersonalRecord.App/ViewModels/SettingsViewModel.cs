@@ -36,8 +36,14 @@
         [RelayCommand]
         public async Task SaveAndGoBackAsync()
         {
+            var currentSettings = _settingsService.LoadSettings();
+            var languageChanged = currentSettings.Language != Setting.Language;
+
             _settingsService.UpdateSettings(Setting);
-            await _navigationService.GoBackAsync();
+            if (!languageChanged)
+            {
+                await _navigationService.GoBackAsync();
+            }
         }
     }
 }

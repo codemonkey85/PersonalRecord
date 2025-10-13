@@ -1,6 +1,7 @@
 namespace PersonalRecord.Services.UnitTests
 {
     using PersonalRecord.Services.Interfaces;
+    using Xunit;
 
     public class VersionServiceTests
     {
@@ -8,9 +9,9 @@ namespace PersonalRecord.Services.UnitTests
 
         private const char PLUS = '+';
 
-        public VersionServiceTests(IVersionService versionService)
+        public VersionServiceTests()
         {
-            _versionService = versionService;
+            _versionService = new VersionService();
         }
 
         [Fact]
