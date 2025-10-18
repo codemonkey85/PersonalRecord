@@ -43,6 +43,15 @@ namespace PersonalRecord.Domain.Helpers
                     },
                     new MovementRecord
                     {
+                        MovementRecordID = SampleConstants.SampleCleanSecondPrId,
+                        Movement = clean,
+                        MvrDate = SampleConstants.SamplePrsSecondDate,
+                        MvrMovementID_FK = clean.MovementID,
+                        MvrReps = 1,
+                        MvrWeight = SampleConstants.SAMPLE_CLEAN_SECOND_WEIGHT
+                    },
+                    new MovementRecord
+                    {
                         MovementRecordID = SampleConstants.SampleDeadliftPrId,
                         Movement = deadlift,
                         MvrDate = SampleConstants.SamplePrsDate,
