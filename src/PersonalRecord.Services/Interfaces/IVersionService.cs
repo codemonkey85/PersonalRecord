@@ -7,5 +7,11 @@
         string GetInformationalVersion();
 
         string GetCommitHash();
+
+        DateTime GetBuildDate();
+
+        string GetRepositoryUrl();
+
+        string GetCopyright();
     }
 }

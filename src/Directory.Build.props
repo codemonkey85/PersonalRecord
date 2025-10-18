@@ -13,7 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Ramo-Y/PersonalRecord</RepositoryUrl>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <SyncfusionVersion>30.2.7</SyncfusionVersion>
     <MauiVersion>9.0.120</MauiVersion>
@@ -28,6 +28,12 @@
 
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="PersonalRecord.Infrastructure.Attributes.BuildDateAttribute">
+      <_Parameter1>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />

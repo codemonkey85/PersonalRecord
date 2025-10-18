@@ -11,6 +11,7 @@
     {
         private readonly INavigationService _navigationService;
         private readonly IVersionService _versionService;
+        private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
         private string _appVersion;
@@ -25,16 +26,24 @@
         private string _fullVersion;
 
         [ObservableProperty]
+        private string _releaseDate;
+
+        [ObservableProperty]
         private bool _popupIsOpen;
+
+        private readonly string _repositoryUrl;
 
         public MainViewModel(
             INavigationService navigationService,
-            IVersionService versionService)
+            IVersionService versionService,
+            ISettingsService settingsService)
         {
             _navigationService = navigationService;
             _versionService = versionService;
+            _settingsService = settingsService;
 
             AppVersion = _versionService.GetAppVersion() + " ⓘ";
+            _repositoryUrl = _versionService.GetRepositoryUrl();
         }
 
         [RelayCommand]
@@ -71,14 +80,14 @@
         [RelayCommand]
         public async Task OpenProjectPageAsync()
         {
-            var uri = new Uri(EnvironmentConstants.PROJECT_URL);
+            var uri = new Uri(_repositoryUrl);
             await _navigationService.OpenSystemBrowserAsync(uri);
         }
 
         [RelayCommand]
         public async Task OpenProjectIssuesPageAsync()
         {
-            var uri = new Uri(EnvironmentConstants.PROJECT_ISSUES_URL);
+            var uri = new Uri($"{_repositoryUrl}/issues");
             await _navigationService.OpenSystemBrowserAsync(uri);
         }
 
@@ -86,7 +95,7 @@
         public async Task OpenCommitOnRepositoryAsync()
         {
             var commitHash = _versionService.GetCommitHash();
-            var commitUrl = $"{EnvironmentConstants.PROJECT_URL}/commit/{commitHash}";
+            var commitUrl = $"{_repositoryUrl}/commit/{commitHash}";
             var uri = new Uri(commitUrl);
             await _navigationService.OpenSystemBrowserAsync(uri);
         }
@@ -94,7 +103,7 @@
         [RelayCommand]
         public async Task OpenPrivacyPolicyAsync()
         {
-            var privacyPolicyUrl = $"{EnvironmentConstants.PRIVACY_POLICY_URL}";
+            var privacyPolicyUrl = $"{_repositoryUrl}/{EnvironmentConstants.PRIVACY_POLICY_URL_SUFFIX}";
             var uri = new Uri(privacyPolicyUrl);
             await _navigationService.OpenSystemBrowserAsync(uri);
         }
@@ -112,10 +121,14 @@
         [RelayCommand]
         public void ShowDetailInformation()
         {
-            Copyright = EnvironmentConstants.COPYRIGHT + DateTime.Now.Year.ToString();
+            Copyright = _versionService.GetCopyright();
             Technology = AppResources.DevelopedWithDotNetMaui;
             var informationalVersion = _versionService.GetInformationalVersion();
             FullVersion = $"{AppResources.FullVersion}: {informationalVersion}";
+
+            var settings = _settingsService.GetSettings();
+            var buildDate = _versionService.GetBuildDate();
+            ReleaseDate = $"{AppResources.ReleaseDate}: {buildDate.ToString(settings.DateFormat)}";
 
             PopupIsOpen = true;
         }
