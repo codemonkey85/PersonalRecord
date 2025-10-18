@@ -21,7 +21,7 @@
             {
                 UpdatePreferences(newSetting);
                 WeakReferenceMessenger.Default.Send(new LanguageChangedMessage());
-                
+
                 return;
             }
 
@@ -36,7 +36,8 @@
                 WeightUnitFormat = Preferences.Default.Get(nameof(Setting.WeightUnitFormat), DefaultConstants.DEFAULT_WEIGHT_UNIT_FORMAT),
                 DistanceUnit = Preferences.Default.Get(nameof(Setting.DistanceUnit), DefaultConstants.DEFAULT_DISTANCE_UNIT),
                 DateFormat = Preferences.Default.Get(nameof(Setting.DateFormat), DefaultConstants.DEFAULT_DATE_FORMAT),
-                Language = (Language)Preferences.Default.Get(nameof(Setting.Language), DefaultConstants.DEFAULT_LANGUAGE)
+                Language = (Language)Preferences.Default.Get(nameof(Setting.Language), DefaultConstants.DEFAULT_LANGUAGE),
+                InitialDataAdded = Preferences.Default.Get(nameof(Setting.InitialDataAdded), DefaultConstants.DEFAULT_INITIAL_DATA_ADDED)
             };
 
             return setting;
@@ -49,6 +50,7 @@
             Preferences.Default.Set(nameof(Setting.DistanceUnit), newSetting.DistanceUnit);
             Preferences.Default.Set(nameof(Setting.DateFormat), newSetting.DateFormat);
             Preferences.Default.Set(nameof(Setting.Language), (int)newSetting.Language);
+            Preferences.Default.Set(nameof(Setting.InitialDataAdded), newSetting.InitialDataAdded);
         }
     }
 }

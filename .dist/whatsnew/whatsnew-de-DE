@@ -1,5 +1,2 @@
-﻿- Verwendete Bibliotheken aktualisiert
-- Ziel Android Version auf 15 aktualisiert (Google Play Vorgabe)
-- App Bewertungs-Button hinzugefügt
-- Fehler behoben, durch den das Wischen nach links die App geschlossen hat
-- Das Projekt wurde auf die neuesten Frameworks aktualisiert
+﻿- Das Projekt wurde auf die neuesten Frameworks aktualisiert
+- Beispieldaten werden hinzugefügt, sofern keine Bewegungen vorhanden sind

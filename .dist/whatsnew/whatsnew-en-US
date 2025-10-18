@@ -1,5 +1,2 @@
-﻿- Updated used Libraries
-- Set target Android version to 15 (Google Play requirement)
-- Add app rating button
-- Fixed a bug where left swipe closes the app
-- Updated the project to the latest frameworks
+﻿- Updated the project to the latest frameworks
+- Sample data will be added if there are no movements
