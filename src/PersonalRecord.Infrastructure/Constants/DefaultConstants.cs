@@ -15,5 +15,7 @@
         public const int DEFAULT_LANGUAGE = 0;
 
         public const string UNIT_FORMAT_PREFIX = "###.# ";
+
+        public const bool DEFAULT_INITIAL_DATA_ADDED = false;
     }
 }

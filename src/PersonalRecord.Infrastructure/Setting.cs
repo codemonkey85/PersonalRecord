@@ -11,5 +11,7 @@
         public string DateFormat { get; set; }
 
         public Language Language { get; set; }
+
+        public bool InitialDataAdded { get; set; }
     }
 }
