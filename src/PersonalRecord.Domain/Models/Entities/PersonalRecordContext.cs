@@ -24,7 +24,7 @@
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var setting = _settingsService.LoadSettings();
+            var setting = _settingsService.GetSettings();
             optionsBuilder
                 .UseSeeding((context, _) =>
                 {

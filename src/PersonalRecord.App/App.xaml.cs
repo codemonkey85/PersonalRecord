@@ -56,7 +56,7 @@
         private void SetCulture()
         {
             var culture = "en-US";
-            var settings = _settingsService.LoadSettings();
+            var settings = _settingsService.GetSettings();
 
             culture = settings.Language switch
             {

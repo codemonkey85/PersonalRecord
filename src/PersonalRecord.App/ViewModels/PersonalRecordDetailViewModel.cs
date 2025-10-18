@@ -63,7 +63,7 @@
                     Movements.Add(movement);
                 }
 
-                Setting = _settingsService.LoadSettings();
+                Setting = _settingsService.GetSettings();
             });
         }
 
