@@ -13,7 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Ramo-Y/PersonalRecord</RepositoryUrl>
   </PropertyGroup>
-
+  
   <PropertyGroup>
     <SyncfusionVersion>30.2.7</SyncfusionVersion>
     <MauiVersion>9.0.120</MauiVersion>
@@ -32,10 +32,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-    <PackageReference Include="Nerdbank.GitVersioning" Condition="!Exists('packages.config')">
-      <PrivateAssets>all</PrivateAssets>
-      <Version>3.8.118</Version>
-    </PackageReference>
   </ItemGroup>
 
 </Project>
