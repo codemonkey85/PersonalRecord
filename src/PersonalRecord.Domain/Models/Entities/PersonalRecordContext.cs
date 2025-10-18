@@ -1,6 +1,7 @@
 ﻿namespace PersonalRecord.Domain.Models.Entities
 {
     using Microsoft.EntityFrameworkCore;
+    using PersonalRecord.Domain.Helpers;
     using PersonalRecord.Infrastructure.Constants;
 
     public class PersonalRecordContext : DbContext
@@ -22,7 +23,14 @@
                     var any = context.Set<Movement>().Any();
                     if (!any)
                     {
-                        context.Set<Movement>().AddRange(GetSampleMovements());
+                        var movements = SampleHelper.GetSampleMovements();
+                        context.Set<Movement>().AddRange(movements);
+                        context.SaveChanges();
+
+                        var clean = context.Set<Movement>().FirstOrDefault(m => m.MovementID == SampleConstants.SampleCleanId);
+                        var deadlift = context.Set<Movement>().FirstOrDefault(m => m.MovementID == SampleConstants.SampleDeadliftId);
+                        var movementRecords = SampleHelper.GetSampleMovementRecords(clean, deadlift);
+                        context.Set<MovementRecord>().AddRange(movementRecords);
                         context.SaveChanges();
                     }
                 })
@@ -31,26 +39,17 @@
                     var any = await context.Set<Movement>().AnyAsync(cancellationToken);
                     if (!any)
                     {
-                        await context.Set<Movement>().AddRangeAsync(GetSampleMovements(), cancellationToken);
+                        var movements = SampleHelper.GetSampleMovements();
+                        await context.Set<Movement>().AddRangeAsync(movements, cancellationToken);
+                        await context.SaveChangesAsync(cancellationToken);
+
+                        var clean = await context.Set<Movement>().FirstOrDefaultAsync(m => m.MovementID == SampleConstants.SampleCleanId, cancellationToken);
+                        var deadlift = await context.Set<Movement>().FirstOrDefaultAsync(m => m.MovementID == SampleConstants.SampleDeadliftId, cancellationToken);
+                        var movementRecords = SampleHelper.GetSampleMovementRecords(clean, deadlift);
+                        await context.Set<MovementRecord>().AddRangeAsync(movementRecords, cancellationToken);
                         await context.SaveChangesAsync(cancellationToken);
                     }
                 });
-        }
-
-        private IEnumerable<Movement> GetSampleMovements()
-        {
-            var movements = new List<Movement>
-                {
-                    new() {
-                        MovementID = SampleConstants.SampleCleanId,
-                        MovName = SampleConstants.SAMPLE_CLEAN_NAME
-                    },
-                    new() {
-                        MovementID = SampleConstants.SampleDeadliftId,
-                        MovName = SampleConstants.SAMPLE_DEADLIFT_NAME
-                    }
-                };
-            return movements;
         }
     }
 }

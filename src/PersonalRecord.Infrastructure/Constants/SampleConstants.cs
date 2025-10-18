@@ -15,9 +15,11 @@
         public static Guid SampleCleanPrId = Guid.Parse("7700db04-f8a1-4fc4-a54e-49cac742178d");
         public static Guid SampleDeadliftPrId = Guid.Parse("ecb6eed0-7b63-4b14-ba50-d9dc7d43dc27");
 
-        public const int SAMPLE_CLEAN_WEIGHT = 89;
+        public const int SAMPLE_CLEAN_WEIGHT = 80;
         public const int SAMPLE_DEADLIFT_WEIGHT = 130;
 
-        public static DateTime SamplePrsDate = new(2025 - 01 - 01);
+        public static DateTime SamplePrsDate = new(2025, 01, 01);
+
+        public const string SampleNote = "Sample";
     }
 }
