@@ -1,13 +1,13 @@
 ﻿namespace PersonalRecord.Services
 {
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
     using System;
     using System.Reflection;
 
     public class VersionService : IVersionService
     {
-        private const int START_INDEX = 0;
         private const int OFFSET = 1;
 
         public string GetAppVersion()
@@ -22,7 +22,7 @@
             var informationalVersion = GetInformationalVersion();
             var index = informationalVersion.IndexOf('+');
             var toDeleteCount = index + OFFSET;
-            var commitHash = informationalVersion.Remove(START_INDEX, toDeleteCount);
+            var commitHash = informationalVersion[toDeleteCount..];
             return commitHash;
         }
 
@@ -37,7 +37,7 @@
         public DateTime GetBuildDate()
         {
             var metadataAttributes = GetMetadataAttributes();
-            var attribute = metadataAttributes?.First(c => c.Key.Equals(EnvironmentConstants.BUILD_DATE_ATTRIBUTE));
+            var attribute = metadataAttributes?.First(c => c.Key.Equals(nameof(AppResources.BuildDate)));
             var dateString = attribute?.Value ?? string.Empty;
             DateTime.TryParseExact(dateString, "yyyyMMddHHmmss",
                                    System.Globalization.CultureInfo.InvariantCulture,

@@ -26,7 +26,7 @@
         private string _fullVersion;
 
         [ObservableProperty]
-        private string _releaseDate;
+        private string _buildDate;
 
         [ObservableProperty]
         private bool _popupIsOpen;
@@ -128,7 +128,7 @@
 
             var settings = _settingsService.GetSettings();
             var buildDate = _versionService.GetBuildDate();
-            ReleaseDate = $"{AppResources.ReleaseDate}: {buildDate.ToString(settings.DateFormat)}";
+            BuildDate = $"{AppResources.BuildDate}: {buildDate.ToString(settings.DateFormat)}";
 
             PopupIsOpen = true;
         }

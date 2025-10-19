@@ -225,7 +225,7 @@
   <data name="RateThisApp" xml:space="preserve">
     <value>Bewerte diese App</value>
   </data>
-  <data name="ReleaseDate" xml:space="preserve">
-    <value>Release Datum</value>
+  <data name="BuildDate" xml:space="preserve">
+    <value>Build Datum</value>
   </data>
 </root>

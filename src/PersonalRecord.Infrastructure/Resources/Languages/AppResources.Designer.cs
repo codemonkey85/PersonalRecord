@@ -70,6 +70,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Build date.
+        /// </summary>
+        public static string BuildDate {
+            get {
+                return ResourceManager.GetString("BuildDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -273,15 +282,6 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string RateThisApp {
             get {
                 return ResourceManager.GetString("RateThisApp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Release date.
-        /// </summary>
-        public static string ReleaseDate {
-            get {
-                return ResourceManager.GetString("ReleaseDate", resourceCulture);
             }
         }
         
