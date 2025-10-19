@@ -1,16 +1,18 @@
 ﻿namespace PersonalRecord.Services
 {
-    using System.Reflection;
+    using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
+    using System;
+    using System.Reflection;
 
     public class VersionService : IVersionService
     {
-        private const int START_INDEX = 0;
         private const int OFFSET = 1;
 
         public string GetAppVersion()
         {
-            var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version!;
+            var assemblyVersion = GetType().Assembly.GetName().Version!;
             var version = $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Build}";
             return version;
         }
@@ -20,7 +22,7 @@
             var informationalVersion = GetInformationalVersion();
             var index = informationalVersion.IndexOf('+');
             var toDeleteCount = index + OFFSET;
-            var commitHash = informationalVersion.Remove(START_INDEX, toDeleteCount);
+            var commitHash = informationalVersion[toDeleteCount..];
             return commitHash;
         }
 
@@ -30,6 +32,41 @@
             var informationalVersionAttribute = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
             var informationalVersion = informationalVersionAttribute!.InformationalVersion;
             return informationalVersion;
+        }
+
+        public DateTime GetBuildDate()
+        {
+            var metadataAttributes = GetMetadataAttributes();
+            var attribute = metadataAttributes?.First(c => c.Key.Equals(nameof(AppResources.BuildDate)));
+            var dateString = attribute?.Value ?? string.Empty;
+            DateTime.TryParseExact(dateString, "yyyyMMddHHmmss",
+                                   System.Globalization.CultureInfo.InvariantCulture,
+                                   System.Globalization.DateTimeStyles.None,
+                                   out var dateTime);
+            return dateTime;
+        }
+
+        public string GetRepositoryUrl()
+        {
+            var metadataAttributes = GetMetadataAttributes();
+            var attribute = metadataAttributes?.First(c => c.Key.Equals(EnvironmentConstants.REPOSITORY_URL_ATTRIBUTE));
+            var url = attribute?.Value ?? string.Empty;
+            return url;
+        }
+
+        public string GetCopyright()
+        {
+            var assembly = GetType().Assembly;
+            var attribute = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>();
+            var copyright = attribute?.Copyright ?? string.Empty;
+            return copyright;
+        }
+
+        private IEnumerable<AssemblyMetadataAttribute> GetMetadataAttributes()
+        {
+            var assembly = GetType().Assembly;
+            var metadataAttributes = assembly.GetCustomAttributes<AssemblyMetadataAttribute>();
+            return metadataAttributes;
         }
     }
 }

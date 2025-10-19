@@ -8,7 +8,7 @@
 
     public class SettingsService : ISettingsService
     {
-        public Setting LoadSettings()
+        public Setting GetSettings()
         {
             var setting = GetSettingFromPreferences();
             return setting;

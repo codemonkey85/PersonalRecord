@@ -4,7 +4,7 @@
 
     public interface ISettingsService
     {
-        Setting LoadSettings();
+        Setting GetSettings();
 
         void UpdateSettings(Setting newSetting);
     }

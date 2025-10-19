@@ -25,7 +25,7 @@
 
         private void LoadSettings()
         {
-            Setting = _settingsService.LoadSettings();
+            Setting = _settingsService.GetSettings();
         }
 
         public IEnumerable<Language> Languages
@@ -36,7 +36,7 @@
         [RelayCommand]
         public async Task SaveAndGoBackAsync()
         {
-            var currentSettings = _settingsService.LoadSettings();
+            var currentSettings = _settingsService.GetSettings();
             var languageChanged = currentSettings.Language != Setting.Language;
 
             _settingsService.UpdateSettings(Setting);

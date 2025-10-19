@@ -56,7 +56,7 @@
                     MovementRecords.Add(movementRecord);
                 }
 
-                Setting = _settingsService.LoadSettings();
+                Setting = _settingsService.GetSettings();
             });
         }
 

@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <DisplayVersion>1.0.66</DisplayVersion>
-    <ApplicationVersion>66</ApplicationVersion>
+    <DisplayVersion>1.0.67</DisplayVersion>
+    <ApplicationVersion>67</ApplicationVersion>
     <VersionPrefix>$(DisplayVersion)</VersionPrefix>
     <ApplicationDisplayVersion>$(DisplayVersion)</ApplicationDisplayVersion>
 
@@ -13,7 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Ramo-Y/PersonalRecord</RepositoryUrl>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <SyncfusionVersion>30.2.7</SyncfusionVersion>
     <MauiVersion>9.0.120</MauiVersion>
@@ -28,6 +28,13 @@
 
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>BuildDate</_Parameter1>
+      <_Parameter2>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
