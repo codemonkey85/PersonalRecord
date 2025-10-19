@@ -213,7 +213,7 @@
                                Text="{Binding FullVersion}"/>
                         <Label Grid.Row="6"
                                Style="{StaticResource DarkLightLabelCustomStyle}"
-                               Text="{Binding ReleaseDate}">
+                               Text="{Binding BuildDate}">
                         </Label>
                         <Label Grid.Row="8"
                                Style="{StaticResource HyperLinkLabelCustomStyle}"
