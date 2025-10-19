@@ -20,7 +20,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
     <ProjectReference Include="..\PersonalRecord.Services\PersonalRecord.Services.csproj" />
   </ItemGroup>
 </Project>

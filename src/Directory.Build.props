@@ -30,8 +30,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AssemblyAttribute Include="PersonalRecord.Infrastructure.Attributes.BuildDateAttribute">
-      <_Parameter1>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter1>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>BuildDate</_Parameter1>
+      <_Parameter2>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
 

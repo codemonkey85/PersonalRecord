@@ -13,5 +13,7 @@
         public const string SPONSOR_URL = "https://github.com/sponsors/Ramo-Y";
 
         public const string REPOSITORY_URL_ATTRIBUTE = "RepositoryUrl";
+
+        public const string BUILD_DATE_ATTRIBUTE = "BuildDate";
     }
 }

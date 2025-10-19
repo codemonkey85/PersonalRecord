@@ -1,8 +1,8 @@
 ﻿namespace PersonalRecord.Services
 {
-    using PersonalRecord.Infrastructure.Attributes;
     using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Services.Interfaces;
+    using System;
     using System.Reflection;
 
     public class VersionService : IVersionService
@@ -36,10 +36,14 @@
 
         public DateTime GetBuildDate()
         {
-            var assembly = GetType().Assembly;
-            var attribute = assembly.GetCustomAttribute<BuildDateAttribute>();
-            var buildDate = attribute?.DateTime ?? default;
-            return buildDate;
+            var metadataAttributes = GetMetadataAttributes();
+            var attribute = metadataAttributes?.First(c => c.Key.Equals(EnvironmentConstants.BUILD_DATE_ATTRIBUTE));
+            var dateString = attribute?.Value ?? string.Empty;
+            DateTime.TryParseExact(dateString, "yyyyMMddHHmmss",
+                                   System.Globalization.CultureInfo.InvariantCulture,
+                                   System.Globalization.DateTimeStyles.None,
+                                   out var dateTime);
+            return dateTime;
         }
 
         public string GetRepositoryUrl()
