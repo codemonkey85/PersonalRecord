@@ -21,7 +21,7 @@ jobs:
     - name: Publish MAUI Android AAB
       run: dotnet publish ${{ vars.APP_PROJECT }} -c ${{ vars.BUILD_CONFIGURATION }} -f ${{ vars.TARGET_FRAMEWORK }} /p:AndroidPackageFormats=aab /p:AndroidKeyStore=true /p:AndroidSigningKeyStore=${{ runner.temp }}\${{ secrets.KEYSTORE_FILENAME }} /p:AndroidSigningKeyAlias=${{ secrets.KEYSTORE_ALIAS }} /p:AndroidSigningKeyPass="${{ secrets.KEYSTORE_PASSWORD }}" /p:AndroidSigningStorePass="${{ secrets.KEYSTORE_PASSWORD }}" --no-restore
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: ${{ vars.PACKAGE_NAME }}-Signed.aab
         path: ${{ github.workspace }}\src\${{ vars.APP_NAME }}\bin\${{ vars.BUILD_CONFIGURATION }}\${{ vars.TARGET_FRAMEWORK }}\publish\${{ vars.PACKAGE_NAME }}-Signed.aab
