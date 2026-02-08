@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Unit Tests
       run: dotnet test ${{ vars.UNIT_TEST_PROJECTS }} --framework net9.0
     - name: Integration Tests

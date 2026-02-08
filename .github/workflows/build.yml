@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Set License
       shell: pwsh
       run: Set-Content -Path src\PersonalRecord.App\SyncfusionLicense.txt -Value ${{ secrets.SYNCFUSION_LICENSE }} -NoNewline -Force
