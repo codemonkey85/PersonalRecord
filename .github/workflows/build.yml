@@ -10,6 +10,8 @@ jobs:
     - name: Set License
       shell: pwsh
       run: Set-Content -Path src\PersonalRecord.App\SyncfusionLicense.txt -Value ${{ secrets.SYNCFUSION_LICENSE }} -NoNewline -Force
+    - name: Restore Workload
+      run: dotnet workload restore
     - name: Restore dependencies
       run: dotnet restore ${{ vars.APP_PROJECT }} 
     - name: Restore keystore
