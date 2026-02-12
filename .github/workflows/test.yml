@@ -10,6 +10,6 @@ jobs:
     - name: Restore Workload
       run: dotnet workload restore ${{ vars.UNIT_TEST_PROJECTS }} ${{ vars.INTEGRATION_TEST_PROJECTS }}
     - name: Unit Tests
-      run: dotnet test ${{ vars.UNIT_TEST_PROJECTS }} --framework net9.0
+      run: dotnet test ${{ vars.UNIT_TEST_PROJECTS }} --framework net10.0
     - name: Integration Tests
       run: dotnet test ${{ vars.INTEGRATION_TEST_PROJECTS }}
