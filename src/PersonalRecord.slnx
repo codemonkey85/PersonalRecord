@@ -1,0 +1,32 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../.gitignore" />
+    <File Path="../DEVELOPMENT.md" />
+    <File Path="../README.md" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/Solution Items/issue-templates/">
+    <File Path="../.github/ISSUE_TEMPLATE/bug_report.md" />
+    <File Path="../.github/ISSUE_TEMPLATE/feature_request.md" />
+  </Folder>
+  <Folder Name="/Solution Items/whatsnew/">
+    <File Path="../.dist/whatsnew/whatsnew-de-DE" />
+    <File Path="../.dist/whatsnew/whatsnew-en-US" />
+  </Folder>
+  <Folder Name="/Solution Items/workflows/">
+    <File Path="../.github/workflows/build-test-cleanup.yml" />
+    <File Path="../.github/workflows/build.yml" />
+    <File Path="../.github/workflows/cleanup.yml" />
+    <File Path="../.github/workflows/test-build-upload-cleanup.yml" />
+    <File Path="../.github/workflows/test.yml" />
+    <File Path="../.github/workflows/upload.yml" />
+  </Folder>
+  <Project Path="PersonalRecord.App/PersonalRecord.App.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="PersonalRecord.Domain/PersonalRecord.Domain.csproj" />
+  <Project Path="PersonalRecord.Infrastructure.IntegrationTests/PersonalRecord.Infrastructure.IntegrationTests.csproj" />
+  <Project Path="PersonalRecord.Infrastructure/PersonalRecord.Infrastructure.csproj" />
+  <Project Path="PersonalRecord.Services.UnitTests/PersonalRecord.Services.UnitTests.csproj" />
+  <Project Path="PersonalRecord.Services/PersonalRecord.Services.csproj" />
+</Solution>
